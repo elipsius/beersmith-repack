@@ -36,7 +36,7 @@ rpm: clean build-dirs
 unpack-deb: clean build-dirs
 	mkdir -p $(BUILDROOT)/tmp
 	( cd $(BUILDROOT)/tmp && ar vx $(DEBFILE) )
-	( cd $(BASEDIR) && tar xzf $(BUILDROOT)/tmp/data.tar.gz )
+	( cd $(BASEDIR) && tar xf $(BUILDROOT)/tmp/data.tar.* )
 	rm -rf $(BUILDROOT)/tmp
 
 gen-spec: unpack-deb
